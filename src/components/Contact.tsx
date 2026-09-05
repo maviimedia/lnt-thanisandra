@@ -8,7 +8,7 @@ export default function Contact() {
           <div className="grid grid-cols-1 lg:grid-cols-2">
             <div className="p-[30px_20px] lg:p-[50px_40px] bg-[rgba(255,255,255,0.96)] flex flex-col justify-center">
               <h3 className="text-[#a68226] text-[26px] mb-[25px] font-semibold">Schedule Site Visit</h3>
-              <LeadForm source="Contact Section" showEmail={false} />
+              <LeadForm source="Contact Section" />
             </div>
             <div className="hidden lg:block relative h-full">
               <img src="/assets/images/site_visit.webp" alt="Site Visit" className="w-full h-full object-cover block" />

@@ -23,7 +23,7 @@ export default function EnquireModal({ isOpen, onClose }: EnquireModalProps) {
         <h2 className="text-center text-[#888] text-[28px] mb-[5px] font-semibold">Enquire Now</h2>
         <p className="text-center text-black text-[14px] mb-[30px]">Register Here And Avail The Best Benefits!!</p>
 
-        <LeadForm source="Popup Modal" showEmail={true} />
+        <LeadForm source="Popup Modal" />
       </div>
     </div>
   );

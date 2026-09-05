@@ -54,7 +54,7 @@ export default function App() {
       <div className="lg:hidden fixed bottom-[20px] left-1/2 -translate-x-1/2 z-[9999] w-[85%] max-w-[320px]">
         <button 
           onClick={() => setIsModalOpen(true)}
-          className="w-full bg-[#00008B] hover:bg-[#8e6d1c] text-white py-[14px] px-[20px] rounded-[50px] shadow-[0_8px_20px_rgba(166,130,38,0.4)] flex items-center justify-center gap-[10px] font-medium text-[16px] transition-all duration-300 active:scale-95"
+          className="w-full bg-[#8e6d1c] hover:bg-[#000000] text-white py-[14px] px-[20px] rounded-[50px] shadow-[0_8px_20px_rgba(166,130,38,0.4)] flex items-center justify-center gap-[10px] font-medium text-[16px] transition-all duration-300 active:scale-95"
         >
           <i className="fa-solid fa-calendar-check text-[18px]"></i>
           Schedule Site Visit

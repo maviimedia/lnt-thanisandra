@@ -19,22 +19,22 @@ export default function Navbar() {
         <div className={`${isOpen ? 'block' : 'hidden'} lg:flex w-full lg:w-auto mt-[1px] lg:mt-0 h-auto lg:h-full bg-white lg:bg-transparent absolute lg:relative top-[60px] lg:top-0 left-0 shadow-[0_10px_15px_-3px_rgba(0,0,0,0.1)] lg:shadow-none pb-4 lg:pb-0`}>
           <ul className="flex flex-col lg:flex-row items-start lg:items-center h-auto lg:h-full list-none p-4 lg:p-0 m-0 w-full gap-4 lg:gap-0">
             <li className="lg:mx-3 flex items-center w-full">
-              <a href="#highlights" onClick={() => setIsOpen(false)} className="text-gray-800 font-medium inline-flex items-center gap-3 transition-colors hover:text-[#a0782d] py-1 lg:py-0 w-full"><i className="fa-solid fa-circle-check w-[20px] text-center"></i> Highlights</a>
+              <a href="#highlights" onClick={() => setIsOpen(false)} className="text-gray-800 font-medium inline-flex items-center gap-1 transition-colors hover:text-[#a0782d] py-1 lg:py-0 w-full"><i className="fa-solid fa-circle-check w-[18px] text-center"></i> Highlights</a>
             </li>
             <li className="lg:mx-3 flex items-center w-full">
-              <a href="#pricing" onClick={() => setIsOpen(false)} className="text-gray-800 font-medium inline-flex items-center gap-3 transition-colors hover:text-[#a0782d] py-1 lg:py-0 w-full"><i className="fa-solid fa-indian-rupee-sign w-[20px] text-center"></i> Pricing</a>
+              <a href="#pricing" onClick={() => setIsOpen(false)} className="text-gray-800 font-medium inline-flex items-center gap-1 transition-colors hover:text-[#a0782d] py-1 lg:py-0 w-full"><i className="fa-solid fa-indian-rupee-sign w-[18px] text-center"></i> Pricing</a>
             </li>
             <li className="lg:mx-3 flex items-center w-full">
-              <a href="#floor-plan" onClick={() => setIsOpen(false)} className="text-gray-800 font-medium inline-flex items-center gap-3 transition-colors hover:text-[#a0782d] py-1 lg:py-0 w-full"><i className="fa-solid fa-building w-[20px] text-center"></i> Floor Plan</a>
+              <a href="#floor-plan" onClick={() => setIsOpen(false)} className="text-gray-800 font-medium inline-flex items-center gap-1 transition-colors hover:text-[#a0782d] py-1 lg:py-0 w-full"><i className="fa-solid fa-building w-[18px] text-center"></i> Plan</a>
             </li>
             <li className="lg:mx-3 flex items-center w-full">
-              <a href="#amenities" onClick={() => setIsOpen(false)} className="text-gray-800 font-medium inline-flex items-center gap-3 transition-colors hover:text-[#a0782d] py-1 lg:py-0 w-full"><i className="fa-solid fa-water-ladder w-[20px] text-center"></i> Amenities</a>
+              <a href="#amenities" onClick={() => setIsOpen(false)} className="text-gray-800 font-medium inline-flex items-center gap-1 transition-colors hover:text-[#a0782d] py-1 lg:py-0 w-full"><i className="fa-solid fa-water-ladder w-[18px] text-center"></i> Amenities</a>
             </li>
             <li className="lg:mx-3 flex items-center w-full">
-              <a href="#gallery" onClick={() => setIsOpen(false)} className="text-gray-800 font-medium inline-flex items-center gap-3 transition-colors hover:text-[#a0782d] py-1 lg:py-0 w-full"><i className="fa-solid fa-images w-[20px] text-center"></i> Gallery</a>
+              <a href="#gallery" onClick={() => setIsOpen(false)} className="text-gray-800 font-medium inline-flex items-center gap-1 transition-colors hover:text-[#a0782d] py-1 lg:py-0 w-full"><i className="fa-solid fa-images w-[18px] text-center"></i> Gallery</a>
             </li>
             <li className="lg:mx-3 flex items-center w-full">
-              <a href="#connectivity" onClick={() => setIsOpen(false)} className="text-gray-800 font-medium inline-flex items-center gap-3 transition-colors hover:text-[#a0782d] py-1 lg:py-0 w-full"><i className="fa-solid fa-location-dot w-[20px] text-center"></i> Location</a>
+              <a href="#connectivity" onClick={() => setIsOpen(false)} className="text-gray-800 font-medium inline-flex items-center gap-1 transition-colors hover:text-[#a0782d] py-1 lg:py-0 w-full"><i className="fa-solid fa-location-dot w-[18px] text-center"></i> Location</a>
             </li>
           </ul>
         </div>

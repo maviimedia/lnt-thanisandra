@@ -9,40 +9,31 @@ interface FormData {
 
 interface LeadFormProps {
   source: string;
-  showEmail?: boolean;
 }
 
-export default function LeadForm({ source, showEmail = false }: LeadFormProps) {
+export default function LeadForm({ source }: LeadFormProps) {
   const { register, handleSubmit, reset } = useForm<FormData>();
-  const [isSubmitting, setIsSubmitting] = useState(false);
   const [showPopup, setShowPopup] = useState(false);
 
-const onSubmit = async (data: FormData) => {
-    setIsSubmitting(true);
-    try {
-      const payload = {
-        name: data.name,
-        email: data.email || "",
-        phone: data.phone,
-        source: source
-      };
+  const onSubmit = (data: FormData) => {
+    setShowPopup(true);
+    reset();
 
-      await fetch('https://script.google.com/macros/s/AKfycbwzWtwJBgKBHyyZfFfyP7U_2SFX3AnP6FkbPblP02uuUL_Ndv6koa52SSlGuOs3NacX/exec', {
-        method: 'POST',
-        mode: 'no-cors',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(payload),
-      });
-      
-      setShowPopup(true);
-      reset();
-    } catch (error) {
-      console.error(error);
-    } finally {
-      setIsSubmitting(false);
-    }
+    const payload = {
+      name: data.name,
+      email: data.email || "",
+      phone: data.phone,
+      source: source
+    };
+
+    fetch('https://script.google.com/macros/s/AKfycbwzWtwJBgKBHyyZfFfyP7U_2SFX3AnP6FkbPblP02uuUL_Ndv6koa52SSlGuOs3NacX/exec', {
+      method: 'POST',
+      mode: 'no-cors',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(payload),
+    }).catch(error => console.error(error));
   };
 
   return (
@@ -68,17 +59,15 @@ const onSubmit = async (data: FormData) => {
           />
         </div>
 
-        {showEmail && (
-          <div className="relative">
-            <i className="fa-solid fa-envelope absolute left-[15px] top-1/2 -translate-y-1/2 text-[#a68226] text-[16px] z-[2]"></i>
-            <input
-              type="email"
-              {...register('email')}
-              placeholder="Email (Optional)"
-              className="w-full px-4 py-3 pl-[45px] border border-gray-300 rounded-md text-sm outline-none focus:border-[#a68226] transition-colors bg-white"
-            />
-          </div>
-        )}
+        <div className="relative">
+          <i className="fa-solid fa-envelope absolute left-[15px] top-1/2 -translate-y-1/2 text-[#a68226] text-[16px] z-[2]"></i>
+          <input
+            type="email"
+            {...register('email')}
+            placeholder="Email (Optional)"
+            className="w-full px-4 py-3 pl-[45px] border border-gray-300 rounded-md text-sm outline-none focus:border-[#a68226] transition-colors bg-white"
+          />
+        </div>
 
         <div className="flex items-start gap-2">
           <input type="checkbox" defaultChecked className="mt-1 flex-shrink-0" required />
@@ -89,10 +78,9 @@ const onSubmit = async (data: FormData) => {
 
         <button
           type="submit"
-          disabled={isSubmitting}
-          className="w-full bg-[#a68226] hover:bg-[#8e6d1c] text-white py-[14px] rounded-lg text-[16px] font-medium transition-colors disabled:opacity-50"
+          className="w-full bg-[#a68226] hover:bg-[#8e6d1c] text-white py-[14px] rounded-lg text-[16px] font-medium transition-colors"
         >
-          {isSubmitting ? 'Submitting...' : 'Express Your Interest'}
+          Express Your Interest
         </button>
       </form>
 
