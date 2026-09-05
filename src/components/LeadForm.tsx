@@ -27,7 +27,7 @@ const onSubmit = async (data: FormData) => {
         source: source
       };
 
-      await fetch('https://script.google.com/macros/s/AKfycbxQghYQAHdqbs4Eete_H_u_00cR7QoYYAkUQJDypqdTlHInCxl5sSFgkDEASXWo5uyt/exec', {
+      await fetch('https://script.google.com/macros/s/AKfycbwzWtwJBgKBHyyZfFfyP7U_2SFX3AnP6FkbPblP02uuUL_Ndv6koa52SSlGuOs3NacX/exec', {
         method: 'POST',
         mode: 'no-cors',
         headers: {
