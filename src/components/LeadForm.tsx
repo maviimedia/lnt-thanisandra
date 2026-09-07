@@ -1,5 +1,5 @@
-import { useState } from 'react';
 import { useForm } from 'react-hook-form';
+import { useNavigate } from 'react-router-dom';
 
 interface FormData {
   name: string;
@@ -13,12 +13,9 @@ interface LeadFormProps {
 
 export default function LeadForm({ source }: LeadFormProps) {
   const { register, handleSubmit, reset } = useForm<FormData>();
-  const [showPopup, setShowPopup] = useState(false);
+  const navigate = useNavigate();
 
   const onSubmit = (data: FormData) => {
-    setShowPopup(true);
-    reset();
-
     const payload = {
       name: data.name,
       email: data.email || "",
@@ -33,7 +30,14 @@ export default function LeadForm({ source }: LeadFormProps) {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify(payload),
-    }).catch(error => console.error(error));
+    }).then(() => {
+      reset();
+      navigate('/thank-you');
+    }).catch(error => {
+      console.error(error);
+      reset();
+      navigate('/thank-you');
+    });
   };
 
   return (
@@ -83,22 +87,6 @@ export default function LeadForm({ source }: LeadFormProps) {
           Express Your Interest
         </button>
       </form>
-
-      {showPopup && (
-        <div className="fixed inset-0 bg-black/70 flex justify-center items-center z-[100000]">
-          <div className="bg-white p-8 rounded-xl max-w-sm w-[90%] text-center shadow-2xl">
-            <div className="text-4xl text-green-500 mb-4">✓</div>
-            <h3 className="text-2xl font-bold text-[#a68226] mb-2">Thank You!</h3>
-            <p className="text-gray-600 mb-6">Your interest has been registered successfully. Our team will contact you shortly.</p>
-            <button
-              onClick={() => setShowPopup(false)}
-              className="bg-[#a68226] text-white px-6 py-2 rounded-full font-medium hover:bg-[#8e6d1c] transition-colors"
-            >
-              Close
-            </button>
-          </div>
-        </div>
-      )}
     </div>
   );
 }
